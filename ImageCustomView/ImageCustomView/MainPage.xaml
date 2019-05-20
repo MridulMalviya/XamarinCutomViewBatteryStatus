@@ -2,13 +2,20 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:ImageCustomView"
-             x:Class="ImageCustomView.MainPage">
+             x:Class="ImageCustomView.MainPage"
+             xmlns:cv="clr-namespace:ImageCustomView">
 
     <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <StackLayout Orientation="Vertical" >
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel1}" />
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel2}"/>
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel3}"/>
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel1}"/>
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel1}"/>
+            <cv:CustomBatteryView HorizontalOptions="Center" VerticalOptions="Center" BatteryLevel="{Binding BatteryLevel1}"/>
+
+            <Button Text="Refresh" Command="{Binding ClickCommand}" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>

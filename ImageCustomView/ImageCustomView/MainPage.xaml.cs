@@ -12,6 +12,7 @@ namespace ImageCustomView
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MainViewModel();
         }
     }
 }
